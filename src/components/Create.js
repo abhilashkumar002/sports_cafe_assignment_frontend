@@ -31,13 +31,11 @@ export default class Create extends Component {
       })
     })
       .then(response => {
-        console.log(response);
         if(response.status === 200){
           alert('Data successfully inserted into table');
         }
       })
       .catch(err => {
-        console.log(err);
         alert(err)
       })
   }

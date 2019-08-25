@@ -11,7 +11,7 @@ const NavigationDiv = styled.div`
   top: 0;
   left: 0;
 
-  @media (max-width: 800px){
+  @media (max-width: 900px){
     grid-template-columns: 60px auto;
   }
 `;
@@ -28,7 +28,7 @@ const LogoDiv = styled.div`
     width: 90%;
     height: auto;
   }
-  @media (max-width: 800px){
+  @media (max-width: 900px){
     display: none;
   }
 `;
@@ -40,6 +40,7 @@ const Title = styled.title`
   color: white;
   font-size: 2rem;
   font-weight: 600;
+  cursor: pointer;
 `;
 
 const Pages = styled.div`
@@ -47,7 +48,7 @@ const Pages = styled.div`
   align-items: center;
   justify-content: flex-end;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding-right: 15px;
   @media (max-width: 800px){
     display: none;
@@ -56,7 +57,7 @@ const Pages = styled.div`
 
 const Menu = styled.div`
   display: none;
-  @media (max-width: 800px){
+  @media (max-width: 900px){
     padding-left: 10px;
     display: grid;
     grid-template-columns: 1fr;
@@ -64,6 +65,7 @@ const Menu = styled.div`
     background-color: inherit;
     padding: 15px;
     cursor: pointer;
+    position: relative;
   }
 `;
 
@@ -74,4 +76,23 @@ const Bar = styled.div`
   background-color: #fff;
 `;
 
-export { NavigationDiv, LogoDiv, Title, Pages, Menu, Bar }
+const VerticalMenu = styled.ul`
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  background-color: inherit;
+  width: 40%;
+  height: auto;
+  margin: 0;
+  opacity: 0.8;
+  visibility: ${props => props.visibility ? "visible" : 'hidden'}
+  li {
+    list-style: none;
+    display: block;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+`;
+
+export { NavigationDiv, LogoDiv, Title, Pages, Menu, Bar, VerticalMenu }

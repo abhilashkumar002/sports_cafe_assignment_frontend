@@ -37,7 +37,6 @@ export default class EditOrDelete extends Component {
   }
 
   changeEditStateFalse(){
-    console.log('here')
     this.props.changeEditState(this.state);
   }
 

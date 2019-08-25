@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-size: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: aqua;
+  background-color: #8d8e8a;
 }
 
 a {
@@ -13,8 +13,19 @@ a {
   justify-content: flex-end;
 }
 
-@media only screen and (max-width: 800px){
-  a {
+
+.visible {
+  display: block;
+  color: #fff
+}
+
+.visibleLink {
+  display: block;
+}
+
+
+@media only screen and (max-width: 900px){
+  .notvisible {
     display: none;
   }
 }

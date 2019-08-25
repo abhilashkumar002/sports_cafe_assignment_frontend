@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Edit from './Edit';
+import Edit from "./Edit";
 
 import {
   CardDiv,
@@ -13,59 +14,69 @@ import {
 } from "../styles/MainStyle";
 
 class Card extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      edit : false,
+      edit: false,
       id: this.props.article.id,
-      article : this.props.article
+      article: this.props.article
     };
     this.changeEditState = this.changeEditState.bind(this);
     this.deleteArticle = this.deleteArticle.bind(this);
     this.changeEditStateFalse = this.changeEditStateFalse.bind(this);
   }
 
-  changeEditState(){
+  changeEditState() {
     this.setState({
       edit: true
-    })
+    });
   }
 
-  changeEditStateFalse(article){
+  changeEditStateFalse(article) {
     this.setState({
       edit: false,
       article: article
     });
-
   }
 
-  deleteArticle(){
-    
+  deleteArticle() {
     const id = this.state.id;
     this.props.deleteArticle(id);
   }
 
   render() {
-    const { author, content, image_link, sports_name, title} = this.state.article;
-    if(this.state.edit){
-      return <Edit article={this.props.article} changeEditState={this.changeEditStateFalse}/>
+    const {
+      id,
+      author,
+      content,
+      image_link,
+      sports_name,
+      title
+    } = this.state.article;
+    if (this.state.edit) {
+      return (
+        <Edit
+          article={this.props.article}
+          changeEditState={this.changeEditStateFalse}
+        />
+      );
     }
     return (
       <CardDiv>
-        <CardImage>
-          <img
-            src={image_link}
-            alt="Logo"
-          />
-        </CardImage>
+        <Link to={{ pathname: "/article", state: { id: id } }}>
+          <CardImage>
+            <img src={image_link} alt="Logo" />
+          </CardImage>
+        </Link>
         <CardDetails>
           <SportsName>{sports_name}</SportsName>
           <ArticleTitle>{title}</ArticleTitle>
-          <ArticleContent><p>{content}</p></ArticleContent>
+          <ArticleContent>
+            <p>{content}</p>
+          </ArticleContent>
           <AuthorDiv>
             <div>{author}</div>
-            <button onClick={this.changeEditState} >Edit</button>
+            <button onClick={this.changeEditState}>Edit</button>
             <button onClick={this.deleteArticle}>Delete</button>
           </AuthorDiv>
         </CardDetails>

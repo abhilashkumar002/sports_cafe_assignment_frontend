@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Main from "./components/Main";
 import AboutUs from "./components/AboutUs";
 import Create from './components/Create';
+import Article from './components/Article';
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class App extends Component {
           <Route exact path='/' component={() => <Main refresh={this.state.refresh} action={this.refreshFeed} />} />
           <Route path='/aboutus' component={AboutUs }/>
           <Route path='/insertnew' component={ Create} />
-          {/* <Main refresh={this.state.refresh} action={this.refreshFeed} /> */}
+          <Route path='/article' component={Article} />
         </div>
       </Router>
     );
