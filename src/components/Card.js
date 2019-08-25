@@ -72,7 +72,7 @@ class Card extends Component {
           <SportsName>{sports_name}</SportsName>
           <ArticleTitle>{title}</ArticleTitle>
           <ArticleContent>
-            <p>{content}</p>
+            <p>{content.substr(0, 150)+' ....'}</p>
           </ArticleContent>
           <AuthorDiv>
             <div>{author}</div>
