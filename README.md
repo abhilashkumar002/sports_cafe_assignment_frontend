@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available urls
+'http://localhost:3000/' => home
+'http://localhost:3000/insertnew' => insert a new article
+'http://localhost:3000/aboutus' => about us page
+
 ## Available Scripts
 
 In the project directory, you can run:
